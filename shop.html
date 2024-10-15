@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Grid</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 150px;
+        }
+
+        /* Container for the grid layout */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;  
+            padding: 20px;
+            width: 100%;
+            max-width: 1200px;  
+        }
+
+       
+        .product-card {
+            background-color: white;
+            border: 1px solid #e6e6e6;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 104%; 
+            height: 350px; 
+            cursor: pointer;
+        }
+        .product-card:hover {
+            background-color: #f5f5f5;
+        }
+
+        .image-container {
+            position: relative; 
+            width: 100%;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px; 
+            object-fit: cover; 
+            border-bottom: 1px solid #e6e6e6;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .new-label {
+            display: inline-block;
+            background-color: yellowgreen;
+            color: black;
+            font-weight: bold;
+            font-size: 12px;
+            padding: 4px 6px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border-radius: 10px;
+        }
+
+        .product-details {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .product-title {
+            font-size: 18px;  /* Adjusted to fit within the fixed card size */
+            font-weight: bold;
+            color: #333;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .price {
+            font-size: 16px;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .pre-order-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #28a745;
+            text-decoration: none;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+        .pre-order-link:hover::after {
+            content: " > ";
+            color: #28a745;
+            font-weight: bolder;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .pre-order-link:hover {
+            color: #218838;
+            text-decoration-line: underline;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="image-container">
+                <img src="C:\Users\DELL\Downloads\xbox-1.jpg" alt="Xbox Series X" class="product-image">
+                <span class="new-label">NEW</span>
+            </div>
+            <div class="product-details">
+                <h1 class="product-title">Xbox Series X - 1 TB Digital Edition (White)</h1>*
+                <p class="price">£429.99</p>
+                <a class="pre-order-link" onclick="location.href='order.html'" >PRE-ORDER </a>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="image-container">
+                <img src="C:\Users\DELL\Downloads\xb-2.jpg" alt="Xbox Series X" class="product-image">
+                <span class="new-label">MICROSOFT STORE EXCLUSIVE</span>
+            </div>
+            <div class="product-details">
+                <h1 class="product-title">Xbox Series X - 2 TB Galaxy Black Special Edition</h1>
+                <p class="price">£549.99</p>
+                <a class="pre-order-link" onclick="location.href='order.html'" >PRE-ORDER </a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="image-container">
+                <img src="C:\Users\DELL\Downloads\xb-3.jpg" alt="Xbox Series X" class="product-image">
+                <span class="new-label">NEW</span>
+            </div>
+            <div class="product-details">
+                <h1 class="product-title">Xbox Series S - 1 TB (White)</h1>
+                <p class="price">£299.99</p>
+                <a class="pre-order-link" onclick="location.href='order.html'" >PRE-ORDER </a>
+            </div>
+        </div>
+        
+        <div class="product-card">
+            <div class="image-container">
+                <img src="C:\Users\DELL\Downloads\xb-4.jpg" alt="Xbox Series X" class="product-image">
+                <span class="new-label">NEW</span>
+            </div>
+            <div class="product-details">
+                <h1 class="product-title">Xbox Series S – 1TB (Black)</h1>
+                <p class="price"> £299.99</p>
+                <a class="pre-order-link" onclick="location.href='order.html'" >PRE-ORDER </a>
+            </div>
+        </div>
+        
+        <div class="product-card">
+            <div class="image-container">
+                <img src="C:\Users\DELL\Downloads\xb-5.jpg" alt="Xbox Series X" class="product-image">
+                <span class="new-label">NEW</span>
+            </div>
+            <div class="product-details">
+                <h1 class="product-title">Xbox Series X (Certified Refurbished)</h1>
+                <p class="price">£419.99</p>
+                <a class="pre-order-link" onclick="location.href='order.html'" >PRE-ORDER </a>
+            </div>
+        </div>
+        
+        <div class="product-card">
+            <div class="image-container">
+                <img src="C:\Users\DELL\Downloads\xb-6.jpg" alt="Xbox Series X" class="product-image">
+                <span class="new-label">NEW</span>
+            </div>
+            <div class="product-details">
+                <h1 class="product-title">Xbox Series X</h1>
+                <p class="price">£479.99</p>
+                <a class="pre-order-link" onclick="location.href='order.html'" >PRE-ORDER </a>
+            </div>
+        </div>
+        
+        <div class="product-card">
+            <div class="image-container">
+                <img src="C:\Users\DELL\Downloads\xb-7.jpg" alt="Xbox Series X" class="product-image">
+                <span class="new-label">NEW</span>
+            </div>
+            <div class="product-details">
+                <h1 class="product-title">Xbox Series S</h1>
+                <p class="price"> £249.99</p>
+                <a class="pre-order-link" onclick="location.href='order.html'" >PRE-ORDER </a>
+            </div>
+        </div>
+        
+        <div class="product-card">
+            <div class="image-container">
+                <img src="C:\Users\DELL\Downloads\xb-8.jpg" alt="Xbox Series X" class="product-image">
+                <span class="new-label">NEW</span>
+            </div>
+            <div class="product-details">
+                <h1 class="product-title">Xbox Series X - 1 TB Digital Edition (White)</h1>
+                <p class="price">£429.99</p>
+                <a class="pre-order-link" onclick="location.href='order.html'" >PRE-ORDER </a>
+            </div>
+        </div>
+        
+        <div class="product-card">
+            <div class="image-container">
+                <img src="C:\Users\DELL\Downloads\xbox-1.jpg" alt="Xbox Series X" class="product-image">
+                <span class="new-label">NEW</span>
+            </div>
+            <div class="product-details">
+                <h1 class="product-title">Xbox Series S (Certified Refurbished)</h1>
+                <p class="price">£209.99</p>
+                <a class="pre-order-link" onclick="location.href='order.html'" >PRE-ORDER </a>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

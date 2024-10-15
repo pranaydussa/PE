@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Card</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .product-card {
+            background-color: white;
+            border: 1px solid #e6e6e6;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 420px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+        }
+
+       
+        .image-container {
+            position: relative; 
+            width: 100%;
+        }
+
+        .product-image {
+            width: 100%;
+            border-bottom: 1px solid #e6e6e6;
+            border-radius: 10px;
+        }
+
+       
+        .new-label {
+            display: inline-block;
+            background-color: yellowgreen;
+            color: black;
+            font-weight: bold;
+            font-size: 12px;
+            padding: 4px 6px;
+            position: absolute;  
+            top: 10px;
+            right: 10px; 
+            border-radius: 10px;
+        }
+
+        .product-details {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .product-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .price {
+            font-size: 15px;
+            font-weight: thin;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .pre-order-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #28a745;
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .pre-order-link:hover::after {
+            content: " >";
+            color: #28a745;
+            font-weight: bold;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .pre-order-link:hover {
+            color: #218838;
+            text-decoration-line:underline;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="product-card">
+        <div class="image-container">
+            <img src="C:\Users\DELL\Downloads\xbox-1.jpg" alt="Xbox Series X" class="product-image">
+            <span class="new-label">NEW</span>
+        </div>
+        <div class="product-details">
+            <h1 class="product-title">Xbox Series X - 1 TB Digital Edition (White)</h1>
+            <p class="price">£429.99</p>
+            <a href="#" class="pre-order-link">PRE-ORDER</a>
+        </div>
+    </div>
+</body>
+</html>

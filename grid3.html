@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Grid with Image Slides</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color:gray;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .header {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            max-width: 1000px;
+            margin-bottom: 10px;
+        }
+        
+        .grid-btn{
+            display: inline-block;
+            background-color: #225CBF;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 10px 20px;
+            text-align: none;
+            margin-top: 50px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border-color: gray;
+            cursor: pointer;
+            border-collapse: initial;
+            text-align: center;
+            border-style: hidden;
+        
+            
+            
+        }
+
+
+        .grid-btn:not(:last-child) {
+            border-right: none;
+        }
+
+        .grid-btn:hover, .list-btn:hover {
+            background-color: none;
+        }
+        .grid-btn:active , .list-btn:active{
+            border-color: blue;
+            transform: translateY(1px);
+        }
+
+        .list-btn{
+            display: inline-block;
+            background-color: white;
+            color:#225CBF;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 10px 20px;
+            text-align: none;       
+            margin-top: 50px;         
+            border-color: gray;
+            cursor: pointer;
+            border-collapse: initial;
+            text-align: center;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius:20px ;
+            border-style: hidden;
+           
+        }
+        .list-btn:not(:last-child) {
+            border-left: none;
+        }
+
+        .product-grid-container {
+            width: 90%;
+            max-width: 1000px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            justify-items: center;
+            align-items: start;
+            width: 100%;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            width: 100%;
+            max-width: 275px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            padding: 30px;
+            box-sizing: border-box;
+            border-radius: 10px;
+        }
+
+        .product-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 5px;
+            cursor: pointer;
+            background-color: white;
+            color: gray;
+            font-weight: bold;
+            font-size: 16px;
+            border: none;
+        }
+
+        .prev {
+            left: 5px;
+           
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .new-label {
+            display: inline-block;
+            background-color: yellow;
+            color: black;
+            font-weight: bold;
+            font-size: 12px;
+            padding: 4px 6px;
+            border-radius: 3px;
+            margin-bottom: 20px;
+        }
+
+        .product-title {
+            font-family: sans-serif;
+            font-size: 16px;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .price {
+            font-family: sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .view-product-btn, .basket-btn {
+            width: 100%;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 10px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .view-product-btn {
+            border: 2px solid #225CBF;
+            color: #225CBF;
+        }
+        .view-product-btn:hover {
+            background-color: whitesmoke;
+        }
+
+        .view-product-btn:active {
+            background-color:white;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        .basket-btn {
+            background-color: #225CBF;
+            color: white;
+            border: none;
+        }
+        .basket-btn:hover {
+            background-color: #5a1f8b;
+        }
+        .basket-btn:active {
+            background-color:blue;
+            box-shadow: 0 3px #666;
+            transform: translateY(4px);
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="product-grid-container">
+        <div class="header">
+            <button class="grid-btn" onclick="location.href='grid3.html'">Grid</button>
+            <button class="list-btn" onclick="location.href='list3.html'">List</button>
+        </div>
+
+        <div class="product-grid" >
+            <!-- Product Card 1 -->
+            <div class="product-card" >
+                <div class="image-container">
+                    <img src="C:\Users\DELL\Downloads\c1.webp" class="product-image" alt="PlayStation 5">
+                    <img src="C:\Users\DELL\Downloads\c2.webp" class="product-image" alt="PlayStation 5">
+                    <img src="C:\Users\DELL\Downloads\c3.webp" class="product-image" alt="PlayStation 5">
+                    <button class="prev" onclick="changeSlide(this, -1)">&#10094;</button>
+                    <button class="next" onclick="changeSlide(this, 1)">&#10095;</button>
+                </div>
+                <span class="new-label">NEW</span>
+                <h2 class="product-title">SONY PlayStation 5 Digital Edition (Slim)</h2>
+                <p class="price">£289.00</p>
+                <button class="view-product-btn" onclick="location.href='details.html'">View Product</button>
+                <button class="basket-btn">Add to basket</button>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="C:\Users\DELL\Downloads\c2.webp" class="product-image" alt="PlayStation 5">
+                    <img src="C:\Users\DELL\Downloads\c3.webp" class="product-image" alt="PlayStation 5">
+                    <img src="C:\Users\DELL\Downloads\c4.webp" class="product-image" alt="PlayStation 5">
+                    <button class="prev" onclick="changeSlide(this, -1)">&#10094;</button>
+                    <button class="next" onclick="changeSlide(this, 1)">&#10095;</button>
+                </div>
+                <span class="new-label">LIMITED</span>
+                <h2 class="product-title">SONY PlayStation 5 (Model Group - Slim)</h2>
+                <p class="price">£389.00</p>
+                <button class="view-product-btn" onclick="location.href='details.html'">View Product</button>
+                <button class="basket-btn">Add to basket</button>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="C:\Users\DELL\Downloads\c3.webp" class="product-image" alt="PlayStation 5">
+                    <img src="C:\Users\DELL\Downloads\c4.webp" class="product-image" alt="PlayStation 5">
+                    <img src="C:\Users\DELL\Downloads\c5.webp" class="product-image" alt="PlayStation 5">
+                    <button class="prev" onclick="changeSlide(this, -1)">&#10094;</button>
+                    <button class="next" onclick="changeSlide(this, 1)">&#10095;</button>
+                </div>
+                <span class="new-label">LIVE</span>
+                <h2 class="product-title">SONY PlayStation 5 Digital Edition (Model Group - Slim)</h2>
+                <p class="price">£439.00</p>
+                <button class="view-product-btn" onclick="location.href='details.html'">View Product</button>
+                <button class="basket-btn">Add to basket</button>
+            </div>
+
+            <!-- Product Card 4 -->
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="C:\Users\DELL\Downloads\c4.webp" class="product-image" alt="PlayStation 5">
+                    <img src="C:\Users\DELL\Downloads\c5.webp" class="product-image" alt="PlayStation 5">
+                    <img src="C:\Users\DELL\Downloads\c6.webp" class="product-image" alt="PlayStation 5">
+                    <button class="prev" onclick="changeSlide(this, -1)">&#10094;</button>
+                    <button class="next" onclick="changeSlide(this, 1)">&#10095;</button>
+                </div>
+                <span class="new-label">NEW</span>
+                <h2 class="product-title">SONY PlayStation 5 Wreckfest Bundle</h2>
+                <p class="price">£572.00</p>
+                <button class="view-product-btn" onclick="location.href='details.html'">View Product</button>
+                <button class="basket-btn">Add to basket</button>
+            </div>
+
+         
+            <!-- Product Card 5 -->
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="C:\Users\DELL\Downloads\c5.webp" class="product-image" alt="PlayStation 5">
+                    <img src="C:\Users\DELL\Downloads\c6.webp" class="product-image" alt="PlayStation 5">
+                    <img src="C:\Users\DELL\Downloads\c7.webp" class="product-image" alt="PlayStation 5">
+                    <button class="prev" onclick="changeSlide(this, -1)">&#10094;</button>
+                    <button class="next" onclick="changeSlide(this, 1)">&#10095;</button>
+                </div>
+                <span class="new-label">NEW</span>
+                <h2 class="product-title">SONY PlayStation 5 LEGO 2K Wreckfest Bundle</h2>
+                <p class="price">£589.00</p>
+                <button class="view-product-btn" onclick="location.href='details.html'">View Product</button>
+                <button class="basket-btn">Add to basket</button>
+            </div>
+
+            <!-- Product Card 6 -->
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="C:\Users\DELL\Downloads\c6.webp" class="product-image" alt="PlayStation 5">
+                    <img src="C:\Users\DELL\Downloads\c7.webp" class="product-image" alt="PlayStation 5">
+                    <img src="C:\Users\DELL\Downloads\c8.webp" class="product-image" alt="PlayStation 5">
+                    <button class="prev" onclick="changeSlide(this, -1)">&#10094;</button>
+                    <button class="next" onclick="changeSlide(this, 1)">&#10095;</button>
+                </div>
+                <span class="new-label">LIVE</span>
+                <h2 class="product-title">SONY PlayStation 5 Gotham Knights Bundle</h2>
+                <p class="price">£599.00</p>
+                <button class="view-product-btn" onclick="location.href='details.html'">View Product</button>
+                <button class="basket-btn">Add to basket</button>
+            </div>
+
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="C:\Users\DELL\Downloads\c6.webp" class="product-image" alt="PlayStation 5">
+                    <img src="C:\Users\DELL\Downloads\c7.webp" class="product-image" alt="PlayStation 5">
+                    <img src="C:\Users\DELL\Downloads\c8.webp" class="product-image" alt="PlayStation 5">
+                    <button class="prev" onclick="changeSlide(this, -1)">&#10094;</button>
+                    <button class="next" onclick="changeSlide(this, 1)">&#10095;</button>
+                </div>
+                <span class="new-label">LIVE</span>
+                <h2 class="product-title">SONY PlayStation 5 Gotham Knights Bundle</h2>
+                <p class="price">£599.00</p>
+                <button class="view-product-btn" onclick="location.href='details.html'">View Product</button>
+                <button class="basket-btn">Add to basket</button>
+            </div>
+
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="C:\Users\DELL\Downloads\c6.webp" class="product-image" alt="PlayStation 5">
+                    <img src="C:\Users\DELL\Downloads\c7.webp" class="product-image" alt="PlayStation 5">
+                    <img src="C:\Users\DELL\Downloads\c8.webp" class="product-image" alt="PlayStation 5">
+                    <button class="prev" onclick="changeSlide(this, -1)">&#10094;</button>
+                    <button class="next" onclick="changeSlide(this, 1)">&#10095;</button>
+                </div>
+                <span class="new-label">LIVE</span>
+                <h2 class="product-title">SONY PlayStation 5 Gotham Knights Bundle</h2>
+                <p class="price">£599.00</p>
+                <button class="view-product-btn" onclick="location.href='details.html'">View Product</button>
+                <button class="basket-btn">Add to basket</button>
+            </div>
+
+            <div class="product-card">
+                <div class="image-container" >
+                    <img src="C:\Users\DELL\Downloads\c6.webp" class="product-image" alt="PlayStation 5">
+                    <img src="C:\Users\DELL\Downloads\c7.webp" class="product-image" alt="PlayStation 5">
+                    <img src="C:\Users\DELL\Downloads\c8.webp" class="product-image" alt="PlayStation 5">
+                    <button class="prev" onclick="changeSlide(this, -1)">&#10094;</button>
+                    <button class="next" onclick="changeSlide(this, 1)">&#10095;</button>
+                </div>
+                <span class="new-label">LIVE</span>
+                <h2 class="product-title">SONY PlayStation 5 Gotham Knights Bundle</h2>
+                <p class="price">£599.00</p>
+                <button class="view-product-btn" onclick="location.href='details.html'">View Product</button>
+                <button class="basket-btn">Add to basket</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for the Image Slideshow
+        function changeSlide(button, direction) {
+            const container = button.parentElement;
+            const images = container.querySelectorAll('.product-image');
+            let currentImageIndex = Array.from(images).findIndex(img => img.style.display !== 'none');
+            images[currentImageIndex].style.display = 'none';
+
+            let newImageIndex = (currentImageIndex + direction + images.length) % images.length;
+            images[newImageIndex].style.display = 'block';
+        }
+
+        // Initialize slides on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const imageContainers = document.querySelectorAll('.image-container');
+            imageContainers.forEach(container => {
+                const images = container.querySelectorAll('.product-image');
+                images.forEach((img, index) => {
+                    img.style.display = index === 0 ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

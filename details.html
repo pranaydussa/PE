@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayStation 5 Product Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .left-section {
+            width: 60%;
+            padding-right: 20px;
+        }
+
+        .left-section img#main-image {
+            width: 95%;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .thumbnails {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .thumbnails img {
+            width: 23%;
+            border-radius: 5px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .thumbnails img.active {
+            border: 2px solid blueviolet;
+            border-radius: 50%;
+        }
+
+        .right-section {
+            width: 40%;
+        }
+
+        .title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: lighter;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 1.8rem;
+            font-weight: lighter;
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 30px;
+           
+        }
+
+        .payment-info {
+            font-size: 16px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #212038;
+            font-weight: bold;
+        }
+
+        .highlight {
+            font-size: 14px;
+            color:#212038;
+            font-weight: bold;
+        }
+
+        .payment-info {
+            padding:10px 10px 10px 12px;
+            background-color: rgb(241, 240, 237);
+            border-radius: 6px;
+            border-left: #225CBF;
+            border-style:groove;
+        }
+
+        .offer {
+            background-color:snow;
+            border-style: ridge;
+            padding: 8px 8px 8px 16px;
+            border-radius: 5px;
+            margin: 10px 0;
+            color: #212038;
+            font-size: 14px;
+            margin-bottom: 50px;
+        }
+        .offer:hover{
+            cursor: pointer;
+            background-color: whitesmoke;
+        }
+
+        .basket-btn {
+            background-color: #225CBF;
+            color: white;
+            padding: 10px 0;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 15px;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .basket-btn:hover {
+            background-color: #5a1f8b;
+        }
+
+        .basket-btn:active {
+            background-color:blue;
+            box-shadow: 0 3px #666;
+            transform: translateY(4px);
+        }
+
+        .delivery-info {
+            margin-top: 30px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            padding: 8px 8px 8px 16px ;
+            background-color: aliceblue;
+            color: #212038;
+            border-radius: 5px;
+        }
+
+        .delivery-info a {
+            color: #00bcd4;
+            text-decoration: none;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="left-section">
+        <div class="title">SONY PlayStation 5 Digital Edition (Model Group - Slim)</div>
+        <img id="main-image" src="C:\Users\DELL\Downloads\d1.webp" alt="PS5 Main Image">
+        <div class="thumbnails">
+            <img src="C:\Users\DELL\Downloads\d1.webp" alt="PS5 Thumbnail 1" onclick="changeImage(this)">
+            <img src="C:\Users\DELL\Downloads\d2.webp" alt="PS5 Thumbnail 1" onclick="changeImage(this)">
+            <img src="C:\Users\DELL\Downloads\d3.webp" alt="PS5 Thumbnail 2" onclick="changeImage(this)">
+            <img src="C:\Users\DELL\Downloads\d4.webp" alt="PS5 Thumbnail 3" onclick="changeImage(this)">
+        </div>
+    </div>
+
+    <div class="right-section">
+        
+        <div class="price">£389.00</div>
+        <div class="payment-info">
+            <h3>Monthly payments</h3>
+            <p class="highlight"> -> From £15.76 per month for 36 months</p><br>
+      
+            <h3>Buy now, pay later</h3> 
+            <p class="highlight"> -> Pay as much or as little as you like for 6 months</p>
+        </div>
+
+        <div class="offer">
+            Save 10% off an additional controller with any console purchase. Use code: PLAYER2
+        </div>
+
+        <button class="basket-btn">Contact for order</button>
+
+        <div class="delivery-info">
+            <div>Delivery available</div>
+            <div>Store collection available: <a href="#">Check stores near you</a></div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function changeImage(element) {
+        // Change the main image source to the clicked thumbnail's source
+        const mainImage = document.getElementById('main-image');
+        mainImage.src = element.src;
+
+        // Remove 'active' class from all thumbnails
+        const thumbnails = document.querySelectorAll('.thumbnails img');
+        thumbnails.forEach(img => {
+            img.classList.remove('active');
+        });
+
+        // Add 'active' class to the clicked thumbnail
+        element.classList.add('active');
+    }
+
+    // Set the first thumbnail as active initially
+    document.querySelector('.thumbnails img').classList.add('active');
+</script>
+
+</body>
+</html>
